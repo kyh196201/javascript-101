@@ -92,7 +92,14 @@ form h1 {
   border-color: rgba(224, 226, 231, 1);
 }
 
+.dropdown-toggle:focus {
+  border-color: #1b1c32;
+}
+
 .dropdown-menu {
+  /* visibility: hidden; 으로 되어있는 엘리먼트에는 focus가 이동하지 않는다. */
+  /* 참고: https://stackoverflow.com/questions/7208161/focus-next-element-in-tab-index */
+  visibility: hidden;
   position: absolute;
   z-index: 2;
   top: calc(100% + 4px);
@@ -108,6 +115,7 @@ form h1 {
 }
 
 .dropdown-menu.show {
+  visibility: visible;
   padding: 8px 0;
   max-height: 280px;
   border-color: rgba(224, 226, 231, 0.5);
@@ -124,6 +132,11 @@ form h1 {
 
 .dropdown-option:hover {
   background-color: #f8f9fa;
+}
+
+.dropdown-option:focus {
+  background-color: #f8f9fa;
+  font-weight: bolder;
 }
 
 .next-button {
